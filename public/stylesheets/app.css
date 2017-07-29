@@ -1,0 +1,261 @@
+@import url("whitespace_reset.css");
+body {
+  font: normal 16px Helvetica, Arial, sans-serif;
+  position: relative;
+  letter-spacing: 1px;
+}
+a {
+  text-decoration: none;
+}
+nav {
+  float: left;
+  width: 335px;
+  height: 100vh;
+  background: #464f77;
+  padding: 80px 0 0 0;
+  color: #b2b5c3;
+}
+nav header dl {
+  padding: 5px 0 5px 35px;
+}
+nav header dl dt {
+  font-size: 18px;
+  color: #fff;
+  margin: 0 55px 0 0;
+}
+nav header.active dl {
+  margin-left: 100px;
+}
+nav #all,
+nav #completed-items {
+  margin-bottom: 40px;
+}
+nav #completed-items article dt {
+  text-decoration: line-through;
+}
+nav #all-todos header,
+nav #completed-todos header {
+  padding: 7px 0 7px 0;
+  margin-left: 100px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+nav #all-todos header.active,
+nav #completed-todos header.active {
+  background-color: #383f5f;
+  margin-left: 0;
+  background-position: 100px 50%;
+}
+nav #all-todos header {
+  background: transparent url("../images/icon-todos.png") 0 50% no-repeat;
+}
+nav #completed-todos header {
+  background: transparent url("../images/icon-menu.png") 0 50% no-repeat;
+}
+nav #completed-todos dl dt {
+  margin: 0 41px 0 0;
+}
+nav header.active dd,
+nav dl.active dd {
+  background: #148fd5;
+  color: #fff;
+}
+nav article dl {
+  padding: 10px 0 10px 135px;
+  cursor: pointer;
+}
+nav article dl.active {
+  background: #383f5f;
+}
+nav article dl dt {
+  width: 120px;
+  margin: 0 17px 0 0;
+}
+nav dt,
+nav dd,
+main header dt,
+main header dd {
+  display: inline-block;
+}
+nav dd,
+main header dd {
+  padding: 3px 6px;
+  line-height: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  border-radius: 10px;
+  background: #6b7292;
+}
+main {
+  overflow: hidden;
+  height: 100vh;
+  padding: 80px 20px 0 20px;
+}
+main header dl {
+  padding: 0 0 30px 0;
+}
+main header dl dt {
+  font-size: 24px;
+  margin: 0 15px 0px 5px;
+  vertical-align: middle;
+}
+main header dl dd {
+  background: #148fd5;
+  color: #fff;
+  vertical-align: middle;
+}
+main a#add-todo {
+  display: block;
+  background: transparent url("../images/icon-add.png") 0 7px no-repeat;
+  padding: 5px 0 5px 25px;
+  color: #148fd5;
+  margin: 0 0 10px 10px;
+}
+#items {
+  width: 100%;
+}
+#items table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#items table tr {
+  border-top: 1px solid #ddd;
+  display: block;
+}
+#items table tr td:first-of-type {
+  width: 100%;
+  padding: 15px 0 15px 10px;
+}
+#items label {
+  background: transparent url("../images/icon-checkbox.png") left 50% no-repeat;
+  padding: 0 0 0 30px;
+}
+#items input[type="checkbox"]:checked + label {
+  background-image: url("../images/icon-complete.png");
+  text-decoration: line-through;
+  color: #b3b3b3;
+  padding: 0 0 0 30px;
+}
+#items input[type="checkbox"]:checked + label:hover {
+  color: #148fd5;
+}
+#items input[type="checkbox"] {
+  display: none;
+}
+#items table td a {
+  color: #000;
+}
+#items table tr td:first-of-type:hover {
+  background: rgba(0,100,205,0.2);
+}
+#items table label:hover {
+  color: #148fd5;
+  cursor: pointer;
+}
+#items table tr td:last-of-type {
+  height: 22px;
+  width: 16px;
+  padding: 15px 10px;
+}
+#items table tr td:last-of-type:hover {
+  background: rgba(255,0,0,0.4);
+}
+#modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+  background: rgba(0,0,0,0.4);
+}
+#modal-form {
+  display: none;
+  position: absolute;
+  width: 630px;
+  margin-left: -315px;
+  left: 50%;
+  top: 200px;
+  z-index: 2;
+  background: #fff;
+}
+#modal-form form {
+  padding: 40px;
+  box-sizing: border-box;
+}
+#modal-form form * {
+  background: none;
+  font-size: 16px;
+  color: #757575;
+}
+#modal-form form ul li {
+  padding: 0 0 60px 0;
+}
+#modal-form form label {
+  float: left;
+  width: 100px;
+  padding: 11px 0 0 0;
+}
+#modal-form form input,
+#modal-form form textarea {
+  float: left;
+  width: 430px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#modal-form form input[type="submit"],
+#modal-form form button {
+  background-color: #148fd5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+#modal-form form input[type="submit"] {
+  display: inline-block;
+  clear: both;
+  width: auto;
+  margin: 25px 20px 40px 100px;
+  padding: 10px 70px;
+}
+#modal-form form button {
+  clear: both;
+  padding: 10px 20px;
+  margin: 25px 0 40px 0;
+}
+#modal-form .date {
+  float: left;
+  width: 430px;
+}
+#modal-form .date select {
+  height: 40px;
+  width: 132px;
+}
+#modal-form span {
+  color: #000;
+  background: #fff;
+}
+#modal-form textarea {
+  resize: none;
+}
+label#toggle-menu {
+  position: absolute;
+  top: 20px;
+  display: none;
+  width: 23px;
+  height: 18px;
+}
+input#toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  label#toggle-menu {
+    display: block;
+    background: transparent url("../images/icon-hamburger.png") 0 0 no-repeat;
+    cursor: pointer;
+  }
+  nav {
+    display: none;
+  }
+}

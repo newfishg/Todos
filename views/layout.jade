@@ -1,0 +1,17 @@
+include /_mixins
+
+doctype html
+html
+  head
+    title Todos
+    +stylesheet_link_tag('app')
+    +javascript_include_tag('vendor/all')
+    +javascript_include_tag('handlebars_template')
+  body
+    block content
+    +javascript_include_tag('application')
+    +javascript_include_tag('models/todo')
+    +javascript_include_tag('collections/todos')
+    +javascript_include_tag('views/index', 'views/todo', 'views/todos', 'views/form', 'views/nav')
+    script(type="text/javascript").
+      App.init(!{JSON.stringify(todos)})

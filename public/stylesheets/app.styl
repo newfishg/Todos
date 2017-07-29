@@ -1,0 +1,225 @@
+@import url('whitespace_reset.css')
+
+body
+  font: normal 16px Helvetica, Arial, sans-serif
+  position: relative
+  letter-spacing: 1px
+
+a
+  text-decoration: none
+
+nav
+  float: left
+  width: 335px
+  height: 100vh
+  background: #464f77
+  padding: 80px 0 0 0
+  color: #b2b5c3
+  header dl
+    padding: 5px 0 5px 35px
+    dt
+      font-size: 18px
+      color: #fff
+      margin: 0 55px 0 0
+  header.active dl
+    margin-left: 100px
+  #all,
+  #completed-items
+    margin-bottom: 40px
+  #completed-items
+    article dt
+      text-decoration: line-through
+
+  #all-todos header,
+  #completed-todos header
+    padding: 7px 0 7px 0
+    margin-left: 100px
+    box-sizing: border-box
+    cursor: pointer
+    &.active
+      background-color: #383f5f
+      margin-left: 0
+      background-position: 100px 50%
+  #all-todos header
+    background: transparent url(../images/icon-todos.png) 0 50% no-repeat 
+  #completed-todos header
+    background: transparent url(../images/icon-menu.png) 0 50% no-repeat 
+  #completed-todos dl dt
+    margin: 0 41px 0 0
+  header.active dd,
+  dl.active dd
+    background: #148fd5
+    color: #fff
+  article dl
+    padding: 10px 0 10px 135px
+    cursor: pointer
+    &.active
+      background: #383f5f
+    dt
+      width: 120px
+      margin: 0 17px 0 0
+
+nav dt,
+nav dd,
+main header dt,
+main header dd
+  display: inline-block
+
+nav dd,
+main header dd
+  padding: 3px 6px
+  line-height: 100%
+  font-size: 14px
+  font-weight: normal
+  border-radius: 10px
+  background: #6b7292
+
+
+main
+  overflow: hidden
+  height: 100vh
+  padding: 80px 20px 0 20px
+  header dl
+    padding: 0 0 30px 0
+    dt
+      font-size: 24px
+      margin: 0 15px 0px 5px
+      vertical-align: middle
+    dd
+      background: #148fd5
+      color: #fff
+      vertical-align: middle
+  a#add-todo
+    display: block
+    background: transparent url("../images/icon-add.png") 0 7px no-repeat
+    padding: 5px 0 5px 25px
+    color: #148fd5
+    margin: 0 0 10px 10px
+
+#items
+  width: 100%
+  table
+    width: 100%
+    border-collapse: collapse
+    tr
+      border-top: 1px solid #ddd
+      display: block
+      td:first-of-type
+        width: 100%
+        padding: 15px 0 15px 10px
+  label
+    background: transparent url("../images/icon-checkbox.png") left 50% no-repeat
+    padding: 0 0 0 30px
+  input[type="checkbox"]:checked + label
+    background-image: url("../images/icon-complete.png")
+    text-decoration: line-through
+    color: #b3b3b3
+    padding: 0 0 0 30px
+  input[type="checkbox"]:checked + label:hover
+    color: #148fd5
+  input[type="checkbox"]
+    display: none
+  table 
+    td a
+      color: #000
+    tr td:first-of-type:hover
+      background: rgba(0,100,205, 0.2)
+    label:hover
+      color: #148fd5
+      cursor: pointer
+    tr td
+      &:last-of-type
+        height: 22px
+        width: 16px
+        padding: 15px 10px
+      &:last-of-type:hover
+        background: rgba(255, 0, 0, 0.4)
+
+#modal-background
+  display: none
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 1
+  content: ""
+  background: rgba(0, 0, 0, 0.4)
+
+#modal-form
+  display: none
+  position: absolute
+  width: 630px
+  margin-left: -315px
+  left: 50%
+  top: 200px
+  z-index: 2
+  background: #fff
+  form
+    padding: 40px
+    box-sizing: border-box
+    *
+      background: none
+      font-size: 16px
+      color: #757575
+    ul li
+      padding: 0 0 60px 0
+    label
+      float: left
+      width: 100px
+      padding: 11px 0 0 0
+    input,
+    textarea
+      float: left
+      width: 430px
+      padding: 10px
+      box-sizing: border-box
+    input[type="submit"],
+    button
+      background-color: #148fd5
+      color: #fff
+      border: none
+      border-radius: 4px
+    input[type="submit"]
+      display: inline-block
+      clear: both
+      width: auto
+      margin: 25px 20px 40px 100px
+      padding: 10px 70px
+    button
+      clear: both
+      padding: 10px 20px
+      margin: 25px 0 40px 0
+  .date
+    float: left
+    width: 430px
+    select
+      height: 40px
+      width: 132px
+  span
+    color: #000
+    background: #fff
+  textarea
+    resize: none
+
+label#toggle-menu
+  position: absolute
+  top: 20px
+  display: none
+  width: 23px
+  height: 18px
+
+input#toggle
+  display: none
+
+@media (max-width: 768px)
+  label#toggle-menu
+    display: block
+    background: transparent url("../images/icon-hamburger.png") 0 0 no-repeat
+    cursor: pointer
+  nav
+    display: none
+  
+
+
+

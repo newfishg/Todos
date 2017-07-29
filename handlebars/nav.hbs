@@ -1,0 +1,38 @@
+<div id="all">
+  <div id="all-todos">
+    <header data-title="All Todos" data-total="{{allCount}}">
+      <dl>
+        <dt>All Todos</dt>
+        <dd>{{allCount}}</dd>
+      </dl>
+    </header>
+  </div>
+  <article id="all-lists">
+    {{#each allTodos}}
+    <dl data-title="{{due}}" data-total="{{dueCount}}">
+      <dt>{{due}}</dt>
+      <dd>{{dueCount}}</dd>
+    </dl>
+    {{/each}}
+  </article>
+</div>
+
+
+<div id="completed-items">
+  <div id="completed-todos">
+    <header data-title="Completed" data-total="{{completedCount}}">
+      <dl>
+        <dt>Completed</dt>
+        <dd>{{completedCount}}</dd>
+      </dl>
+    </header>
+  </div>
+  <article id="completed-lists">
+    {{#each completedTodos}}
+    <dl data-title="{{due}}" data-total="{{dueCount}}">
+      <dt>{{due}}</dt>
+      <dd>{{dueCount}}</dd>
+    </dl>
+    {{/each}}
+  </article>
+</div>
